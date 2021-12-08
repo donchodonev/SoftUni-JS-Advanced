@@ -4,5 +4,3 @@ function notSingleResponsibility(a,b,c){
     console.log(Math.floor(totalStringLength));
     console.log(Math.floor(averageLengthOfStrings));
 }
-
-notSingleResponsibility('pasta', '5', '22.3');
