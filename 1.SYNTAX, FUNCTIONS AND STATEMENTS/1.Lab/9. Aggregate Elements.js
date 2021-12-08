@@ -18,4 +18,3 @@ function aggregate(array) {
     console.log(inverseValuesSum);
     console.log(concatenatedString);
 }
-aggregate([2, 4, 8, 16]);
