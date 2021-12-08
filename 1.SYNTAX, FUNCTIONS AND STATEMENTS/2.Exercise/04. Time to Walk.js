@@ -21,4 +21,4 @@ function timeToWalk(stepsTaken, stepSize, speedInKm) {
     console.log(`${hoursAsString}:${minutesAsString}:${secondsAsString}`);
 }
 
-timeToWalk(2564, 0.70, 5.5);
+timeToWalk(2564, 0.70, 5.5); 
