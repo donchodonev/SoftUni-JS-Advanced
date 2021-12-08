@@ -1,4 +1,3 @@
 function getLargestNumber(a,b,c){
-    console.log(Math.max(a,b,c))
+    console.log(`The largest number is ${Math.max(a,b,c)}.`)
 }
-getLargestNumber(15,2,3);
