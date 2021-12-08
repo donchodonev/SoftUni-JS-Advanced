@@ -24,8 +24,6 @@ function checkSpeed(speed, area) {
 
     let resultString;
 
-    let status;
-
     if (area == 'residential') {
 
         if (isAboveResidentialLimit) {
