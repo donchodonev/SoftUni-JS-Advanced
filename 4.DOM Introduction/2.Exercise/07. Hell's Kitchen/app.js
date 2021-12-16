@@ -2,8 +2,8 @@ function solve() {
    document.querySelector('#btnSend').addEventListener('click', onClick);
 
    function onClick() {
-      let bestRestaurantP = document.querySelector('#bestRestaurant p').textContent;
-      let bestRestaurantWorkersP = document.querySelector('#workers p').textContent;
+      let bestRestaurantP = document.querySelector('#bestRestaurant p');
+      let bestRestaurantWorkersP = document.querySelector('#workers p');
       let input = JSON.parse(document.querySelector('#inputs textarea').value);
 
       let restaurants = generateRestaurants(input);
@@ -18,9 +18,9 @@ function solve() {
 
       let bestRestaurantWorkers = bestRestaurant.workers;
 
-      document.querySelector('#bestRestaurant p').textContent = `Name: ${bestRestaurant.name} Average Salary: ${bestRestaurant.averageSalary.toFixed(2)} Best Salary: ${bestRestaurant.maxSalary.toFixed(2)}`;
+      bestRestaurantP.textContent = `Name: ${bestRestaurant.name} Average Salary: ${bestRestaurant.averageSalary.toFixed(2)} Best Salary: ${bestRestaurant.maxSalary.toFixed(2)}`;
 
-      document.querySelector('#workers p').textContent = bestRestaurantWorkers.reduce((acc, c) => acc += `Name: ${c.name} With Salary: ${c.salary} `, "").slice(0,-1);
+      bestRestaurantWorkersP.textContent = bestRestaurantWorkers.reduce((acc, c) => acc += `Name: ${c.name} With Salary: ${c.salary} `, "").slice(0,-1);
 
       function generateRestaurants(input) {
 
