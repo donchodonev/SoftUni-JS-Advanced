@@ -3,21 +3,6 @@ function attachEventsListeners() {
 
     buttons.forEach((button) => button.addEventListener('click', onClick));
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     function onClick(ev) {
         const parent = ev.target.parentNode;
         const imposedTimeValue = parent.querySelector('input[type=text').value;
@@ -25,7 +10,7 @@ function attachEventsListeners() {
 
         for (const div of document.querySelectorAll('main div')) {
             const currentTimeFormat = div.getElementsByTagName('label')[0].htmlFor;
-            const currentTime = div.querySelector('input[type=text');
+            const currentTime = document.getElementById(currentTimeFormat);
 
             if (currentTimeFormat != imposedTimeFormat) {
                 let resultingDifference = calculateDifference(currentTimeFormat, imposedTimeFormat, imposedTimeValue);
@@ -48,26 +33,26 @@ function attachEventsListeners() {
         } else if (imposedTimeFormat == 'hours') {
             if (currentTimeFormat == 'days') {
                 return imposed / 24;
-            } else if (imposedTimeFormat == 'minutes') {
+            } else if (currentTimeFormat == 'minutes') {
                 return imposed * 60;
             } else {
                 return imposed * 60 * 60;
             }
         } else if (imposedTimeFormat == 'minutes') {
             if (currentTimeFormat == 'days') {
-                return imposed * 60 * 24;
+                return imposed / 60 / 24;
             } else if (currentTimeFormat == 'hours') {
-                imposed * 60;
-            } else {
                 return imposed / 60;
+            } else {
+                return imposed * 60;
             }
         } else {
             if (currentTimeFormat == 'days') {
-                imposed * 60 * 60 * 24;
+                return imposed / 60 / 60 / 24;
             } else if (currentTimeFormat == 'hours') {
-                return imposed * 60 * 60;
+                return imposed / 60 / 60;
             } else {
-                return imposed * 60;
+                return imposed / 60;
             }
         }
     }
